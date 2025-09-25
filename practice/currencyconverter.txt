@@ -1,0 +1,44 @@
+Problem Statement: Currency Converter
+You are asked to implement a Currency Converter class that provides a method to convert amounts from one currency to another using a given conversion rate.
+
+The system should support the following requirements:
+
+Basic Conversion
+Given an amount and a conversion rate, the system should return the converted value.
+Example: Converting 100 units at a rate of 0.9 should return 90.0.
+Zero Amount Handling
+If the amount to be converted is 0, the converter should return 0.0 regardless of the conversion rate.
+Negative Amount Handling
+The system should not allow negative amounts to be converted.
+If a negative amount is provided, the converter should throw an IllegalArgumentException.
+Simplicity of Implementation
+Keep the logic simple, without unnecessary complexity.
+Follow the TDD cycle (Red → Green → Refactor) while building the solution.
+
+
+Code: 
+  
+class CurrencyConverterTest {
+    // RED: Start with a failing test for normal conversion.
+    @Test
+    void testConvertAmount() {
+        CurrencyConverter converter = new CurrencyConverter();
+        assertEquals(90.0, converter.convert(100.0, 0.9));
+    }
+
+    // RED: Test zero amount conversion.
+    @Test
+    void testConvertZeroAmount() {
+        CurrencyConverter converter = new CurrencyConverter();
+        assertEquals(0.0, converter.convert(0, 0.9));
+    }
+
+    // RED: Negative amount should throw an error.
+    @Test
+    void testNegativeAmount() {
+        CurrencyConverter converter = new CurrencyConverter();
+        assertThrows(IllegalArgumentException.class, () -> converter.convert(-5, 0.9));
+    }
+
+
+}
