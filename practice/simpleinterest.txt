@@ -1,0 +1,24 @@
+Problem Statement: Simple Interest Calculator
+
+You are required to implement a Simple Interest Calculator that computes the simple interest earned on a loan or investment.
+
+The system should meet the following requirements:
+
+Normal Calculation - 
+Use the formula of simple interest
+​
+Example: For a principal of 1000, rate of 5%, and time of 3 years, the interest should be 150.0.
+
+Zero Principal Handling
+
+If the principal is 0, the computed interest should always be 0.0 regardless of rate or time.
+
+Invalid Input Handling
+
+If a negative interest rate is provided, the calculator should throw an IllegalArgumentException.
+
+Simplicity of Design
+
+The implementation should be minimal and clear.
+
+Development should follow the TDD cycle (Red → Green → Refactor).
