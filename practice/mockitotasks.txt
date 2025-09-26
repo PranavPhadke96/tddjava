@@ -1,0 +1,33 @@
+Pass 2 Problem Statement
+
+Requirement:
+Enhance the CustomerOnboardingService to support eligibility verification.
+
+Given a customer with valid information, when eligibility is checked, the system should return "APPROVED" if the customer meets the criteria.
+
+Use the external dependency EligibilityService to determine eligibility.
+
+Write tests first, then implement checkEligibility(Customer customer) in the service.
+
+Mockito methods to use:
+
+when(...).thenReturn(...) → for stubbing the eligibility check.
+
+verify(..., times(1)) → to ensure eligibilityService.checkEligibility(customer) was invoked exactly once.
+
+Pass 3 Problem Statement
+
+Requirement:
+Extend the CustomerOnboardingService to support account creation with error handling.
+
+Given an eligible customer attempting account creation, when the external AccountService is unavailable, the system should throw a custom ServiceUnavailableException.
+
+Write tests first, then implement createAccount(Customer customer) in the service.
+
+Mockito methods to use:
+
+when(...).thenThrow(...) → to simulate the unavailable account service.
+
+assertThrows(...) → to assert that the exception is thrown.
+
+verify(..., times(1)) → to ensure accountService.createAccount(customer) was invoked exactly once.
