@@ -1,3 +1,6 @@
 Problem Statement 2: 
 Write PaymentProcessor that adds a transaction fee to payments based on user's account type from an external dependency AccountTypeProvider. 
 Write tests using a stub for AccountTypeProvider to simulate different account types. 
+There is a 2 percent fee for premium accounts and a  2 percent fee for standard accounts.
+Write test cases first for this and then the implementation.
+
