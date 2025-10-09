@@ -1,0 +1,68 @@
+Problem Statement: Temperature Monitoring System
+
+You are tasked with developing a simple Temperature Monitoring System for a smart industrial device. The system needs to continuously monitor temperature readings and trigger an alert whenever the temperature exceeds a defined threshold value.
+
+To ensure reliability, you must follow the Test-Driven Development (TDD) approach — that is,
+
+Write the tests first (Red),
+
+Write the minimum code to make them pass (Green), and
+
+Refactor to improve the design if needed.
+
+Requirements
+
+The TemperatureMonitor class should be initialized with a temperature threshold (e.g., 30°C).
+
+The class should allow adding new temperature readings using a method addReading(double value).
+
+If any reading exceeds the threshold, the system should trigger an alert.
+
+The system should provide a method isAlert() to check if an alert is currently active.
+
+The alert state can be cleared using a method resetAlert(), which resets the alert back to false.
+
+Test Cases (already written for you)
+
+The following tests describe the expected behavior. Your task is to write production code that makes them pass:
+
+package org.p003;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+class TemperatureMonitorTest {
+
+    // RED: Above threshold triggers alert.
+    @Test
+    void testAlertTriggered() {
+        TemperatureMonitor monitor = new TemperatureMonitor(30);
+        monitor.addReading(32);
+        assertTrue(monitor.isAlert());
+    }
+
+    // RED: Below threshold does not trigger alert.
+    @Test
+    void testNoAlertBelowThreshold() {
+        TemperatureMonitor monitor = new TemperatureMonitor(30);
+        monitor.addReading(28);
+        assertFalse(monitor.isAlert());
+    }
+
+    // RED: Reset alert restores status.
+    @Test
+    void testResetAlert() {
+        TemperatureMonitor monitor = new TemperatureMonitor(30);
+        monitor.addReading(32);
+        monitor.resetAlert();
+        assertFalse(monitor.isAlert());
+    }
+}
+
+TDD Steps - 
+
+Start with the failing test (testAlertTriggered) — write just enough code to make it pass.
+
+Move on to the next failing test, ensuring that earlier tests still pass.
+
+Finally, implement the resetAlert() logic.
