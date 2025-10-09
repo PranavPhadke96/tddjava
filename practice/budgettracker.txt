@@ -1,0 +1,37 @@
+Problem Statement: Budget Tracking System
+Context
+
+You are building a Budget Tracking System for a personal finance app.
+The goal is to help users keep track of their expenses and get notified when they exceed their budget.
+
+You will design and implement a BudgetTracker class that keeps track of a user’s total spending against a defined budget limit.
+
+You must follow the Test-Driven Development (TDD) approach — write the test cases first (RED), then write the minimal code to make them pass (GREEN), and finally refactor if needed.
+
+Functional Requirements
+
+Initialization
+
+When a BudgetTracker is created, it should accept a budget limit (e.g., ₹100 or $100).
+
+Add Expense
+
+The system should allow adding expenses using a method addExpense(double amount).
+
+The tracker should maintain a running total of all expenses.
+
+Check Budget Status
+
+The method isOverBudget() should return:
+
+false if the total expenses are less than or equal to the budget limit.
+
+true if the total expenses exceed the budget limit.
+
+Remove Expense
+
+The tracker should support removing an expense using a method removeExpense(double amount).
+
+After removing an expense, the total should update accordingly.
+
+If the total goes back below or equal to the limit, isOverBudget() should return false.
