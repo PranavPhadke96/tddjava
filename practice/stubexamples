@@ -1,0 +1,16 @@
+Stub examples :
+Example 3: Item Restocking Logic
+Task Requirement:
+Create an InventoryManager that checks if items need to be restocked using the SupplierService. 
+If stock is below threshold, it should request restock. 
+Use a stub for SupplierService to simulate item availability. 
+
+Example 4: Email Validation Service
+Task Requirement: 
+Develop an EmailChecker that validates emails and checks if the domain is allowed by consulting an external AllowedDomainsProvider.
+Test using a stub for domains. 
+
+Example 5: Discount Eligibility Checker
+Task Requirement:
+Implement DiscountService to apply discount based on loyalty status from an external dependency. Use a stub to simulate the loyalty status. 
+
